@@ -3,24 +3,26 @@
 >
 </header> 
 
-<h1>FORMULARIO DE PRODUTOS</h1>
+<h1>EDITAR PRODUTO</h1>
+    
+<form method="post" action="#" th:object="${produto}"
+        th:action="@{/produto/atualizar/{id}(id=${produto.id})}" >
 
-<form method="post" action="#" th:action="@{/produto/salvar}" th:object="${produto}">
     <div class="form-group">
         <label for="nome" class="form-label">Nome</label>
-        <input class="form-control" type="text" id="nome" th:field="*{nome}">
+        <input class="form-control" type="text"  th:field="*{nome}">
         <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
     </div>
 
     <div class="form-group">
         <label for="preco" class="form-label">Preço</label>         
-        <input class="form-control" type="text" id="preco" th:field="*{preco}">
+        <input class="form-control" type="text"  th:field="*{preco}">
         <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span>
     </div>
 
     <div class="form-group">
         <label for="quantidade" class="form-label">Quantidade</label>         
-        <input class="form-control" type="text" id="quantidade" th:field="*{quantidade}">
+        <input class="form-control" type="text"  th:field="*{quantidade}">
         <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"></span>
     </div>
    
